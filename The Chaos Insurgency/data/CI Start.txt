@@ -1,0 +1,55 @@
+mission "CI 1"
+	name "Transport Cryptarch"
+	description `Take Cryptarch to the Chaos Insurgency's base on <destination>.`
+	minor
+	to offer
+		random < 45
+		has "main plot completed"
+	source
+		government Republic "Free Worlds" Syndicate Neutral 
+	destination
+		planet "Location One"
+	on offer
+		conversation
+			`You find yourself walking down a dark alleyway on the way to an underground bar that sells some of your favorite exotic drinks.`
+			`	As you near your destination, you notice a shady figure in a trench coat leaning against a wall. You think nothing of it, assuming he's just a normal dark alley shady figure.`
+			`	You are about to turn the corner when the figure steps in front of you, blocking your path. You can't see his face. "Captain <last>."`
+			choice
+				`	"That's me"`
+				`	"I'm <last>, who the hell are you?"`
+			`	"You will know me as Cryptarch, for I cannot reveal to you my true name at this time. I come representing an agency who's interested in your services."`
+			`	You open your mouth to speak, but he stops you. "Let me stop you. You were going to inquire about my agency? We are known to most as the Chaos Insurgency. We live to free the common people from their opressors."`
+			`	"we are... aware of your work with the Free Worlds, and you are the kind of the material we're looking for. Now the only question that remains is, are you in or out?"`
+			choice
+				`	"I'll need more info."`
+				goto more
+			`	"Aware of my work? What are you, some kind of stalker?"`
+			`	"Our agency keeps detailed records on any and all possible members. We don't 'stalk' anyone..."`
+			label more
+			`	"I guess I can trust you enough to tell you more... Our current goal is to remove a corrupt organization known as the Unity Movement from power."`
+			`	"All apologies in advance, but this is all I can tell you at this time. You will be allowed more information if you take me to our base, and join the agency."
+			choice
+				`	"You're not giving me an awful lot to go off here, but I guess I'll help you."`
+				goto help
+				`	"I'm sorry, but I'm not convinced. I'm not just going to join some organization without knowing anything about it."`
+				
+			`	""Well, that's unfortunate." He moves aside and allows you to pass, but just as you pass, you get hit on the back of the head and fall to the ground. WHen you wake up, you find yourself unable to remember what happened for the last half hour.`
+			decline
+			
+			label help
+			`	"That's good to hear. Your first assignment is to take me to our secret space station, <destination>."
+			accept
+			
+	npc evade
+		government "??? "
+		personality timid
+		fleet
+			names "mystery craft"
+			variant
+				"Gunboat (Mark II)"
+	
+	on visit
+		dialog `You prepare to disembark your ship but notice an odd sensor scan. An unknown Gunboat has been following you since <source>. Feigning a refuel, you quickly undock and hope the base has sensor scramblers to throw off the Gunboat's scans.`
+				
+	on complete
+		dialog `You dock with the station and cycle the airlocks. You glance at a security feed and see Cryptarch exiting the ship. You are pinged with a message: "Remain on your ship for an hour. Then meet me at the cafeteria."`
