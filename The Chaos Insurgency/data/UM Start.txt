@@ -21,14 +21,15 @@ mission "UM 1"
 			`	She grins a bit before continuing. "This is a little bit embarrasing, but you and your Free Worlds friends were once one of those factors. I guess it's good you weren't removed."`
 			choice
 				`	"I can agree with that."`
-				goto agree
-			`	"Being "removed" doesnt sound very fun at all."`
+					goto agree
+				`	"Being "removed" doesnt sound very fun at all."`
 			`	"It wouldn't have been. The resolution to the war came at a good time for you" she replies.`
 			label agree 
 			`	"Anyways, we're getting off topic here. Or movement needs your help. However, I cannot tell you more until you agree to help us."`
 			choice
 				`	"You're not giving me an awful lot to go off here, but I guess I'll help you."`
-				goto help
+					goto help
+				
 				`	"I'm sorry, but I'm not convinced. I'm not just going to join some organization without knowing anything about it."`
 				
 			`	"Well that's to bad. I guess there's nothing left to talk about." She leaves you standing in the alleyway. Unable to remember why you came down here in the first place, you return to your ship.`
